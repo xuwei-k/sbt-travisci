@@ -41,7 +41,7 @@ object TravisCiPlugin extends AutoPlugin {
 
       if (manifest.exists()) {
         import scala.collection.JavaConverters._
-        Using.fileInputStream(manifest) { fis =>
+        sbt.io.Using.fileInputStream(manifest) { fis =>
           val yaml = Option(new org.yaml.snakeyaml.Yaml().load(fis))
             .collect { case map: java.util.Map[_, _] => map }
 
