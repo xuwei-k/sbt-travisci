@@ -3,12 +3,6 @@ jdk: oraclejdk8
 scala: 2.10.6
 script: project/travis.sh
 
-# Build only master and version tags - http://stackoverflow.com/a/31882307/463761
-branches:
-  only:
-    - master
-    - /^v[0-9]/
-
 env:
   global:
     - COURSIER_PROGRESS=0
